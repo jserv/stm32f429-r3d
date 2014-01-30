@@ -12,7 +12,7 @@ CROSS_COMPILE = arm-none-eabi-
 CC = $(CROSS_COMPILE)gcc
 OBJCOPY = $(CROSS_COMPILE)objcopy
 OBJDUMP = $(CROSS_COMPILE)objdump
-SIZE=$(CROSS_COMPILE)size
+SIZE = $(CROSS_COMPILE)size
 
 LIBS = -lm
 CFLAGS = -g -std=c99 -O3 -ffast-math
@@ -58,8 +58,6 @@ CFLAGS += -I$(STDP)/Libraries/CMSIS/Include
 SOURCE += $(STDP)/Libraries/CMSIS/Lib/GCC/libarm_cortexM4lf_math.a
 
 # STemWinLibrary522_4x9i
-# CFLAGS += -I$(STDP)/Libraries/STemWinLibrary522_4x9i/Config
-# SOURCE += $(STDP)/Libraries/STemWinLibrary522_4x9i/Config/*.c
 CFLAGS += -I$(STDP)/Libraries/STemWinLibrary522_4x9i/inc
 SOURCE += $(STDP)/Libraries/STemWinLibrary522_4x9i/Lib/STemWin522_4x9i_CM4_OS_GCC.a
 
