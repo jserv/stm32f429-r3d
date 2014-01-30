@@ -97,7 +97,7 @@ clean:
 	rm -f $(PROJECT).lst
 
 flash:
-	/tmp/bin/openocd -f stm32f429discovery.cfg \
+	openocd -f stm32f429discovery.cfg \
 		-c "init" \
 		-c "reset init" \
 		-c "halt" \
