@@ -15,7 +15,8 @@ OBJDUMP = $(CROSS_COMPILE)objdump
 SIZE=$(CROSS_COMPILE)size
 
 LIBS = -lm
-CFLAGS = -g -std=c99 -O3 -mlittle-endian -mthumb
+CFLAGS = -g -std=c99 -O3 -ffast-math
+CFLAGS += -mlittle-endian -mthumb
 CFLAGS += -mcpu=cortex-m4 -DSTM32F429_439xx
 #CFLAGS += -nostartfiles
 #CFLAGS += -ffreestanding
