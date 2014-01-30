@@ -1,0 +1,5 @@
+libSTM32F4xx_StdPeriph_Driver.a
+*.bin
+*.elf
+*.hex
+*.lst
