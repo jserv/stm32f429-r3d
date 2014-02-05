@@ -27,6 +27,10 @@ endef
 LDFLAGS += -L $(call get_library_path,libc.a)
 LDFLAGS += -L $(call get_library_path,libgcc.a)
 
+# Basic configurations
+CFLAGS += -g -std=c99
+CFLAGS += -Wall
+
 # Optimizations
 CFLAGS += -g -std=c99 -O3 -ffast-math
 CFLAGS += -ffunction-sections -fdata-sections
