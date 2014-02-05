@@ -1,4 +1,4 @@
-libSTM32F4xx_StdPeriph_Driver.a
+*.o
 *.bin
 *.elf
 *.hex
