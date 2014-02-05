@@ -14,11 +14,7 @@ prepare several recent utilities:
     cd openocd
     ./bootstrap
     ./configure --prefix=/usr/local \
-        --enable-jlink \
-        --enable-amtjtagaccel \
-        --enable-buspirate \
-        --enable-stlink \
-        --disable-libftdi
+        --enable-stlink
     echo -e "all:\ninstall:" > doc/Makefile
     make
     sudo make install
