@@ -17,7 +17,7 @@ SIZE = $(CROSS_COMPILE)size
 
 # Cortex-M4 implements the ARMv7E-M architecture
 CPU = cortex-m4
-CFLAGS = -mcpu=$(CPU)
+CFLAGS = -mcpu=$(CPU) -march=armv7e-m -mtune=cortex-m4
 CFLAGS += -mlittle-endian -mthumb
 
 LDFLAGS =
@@ -35,6 +35,8 @@ CFLAGS += -Wall
 CFLAGS += -g -std=c99 -O3 -ffast-math
 CFLAGS += -ffunction-sections -fdata-sections
 CFLAGS += -Wl,--gc-sections
+CFLAGS += -fno-common
+CFLAGS += --param max-inline-insns-single=1000
 
 # FPU
 CFLAGS += -mfpu=fpv4-sp-d16 -mfloat-abi=hard
