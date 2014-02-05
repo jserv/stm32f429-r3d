@@ -27,13 +27,17 @@ endef
 LDFLAGS += -L $(call get_library_path,libc.a)
 LDFLAGS += -L $(call get_library_path,libgcc.a)
 
+# Optimizations
 CFLAGS += -g -std=c99 -O3 -ffast-math
-CFLAGS += -DSTM32F429_439xx
+CFLAGS += -ffunction-sections -fdata-sections
 CFLAGS += -Wl,--gc-sections
 
 # FPU
 CFLAGS += -mfpu=fpv4-sp-d16 -mfloat-abi=hard
 CFLAGS += -DARM_MATH_CM4 -D__FPU_PRESENT
+
+# specify STM32F429
+CFLAGS += -DSTM32F429_439xx
 
 # to run from FLASH
 CFLAGS += -DVECT_TAB_FLASH
