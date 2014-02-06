@@ -144,7 +144,7 @@ flash:
 		-c "halt" \
 		-c "flash write_image erase $(PROJECT).elf" \
 		-c "verify_image $(PROJECT).elf" \
-		-c "reset run" -c shutdown
-	#st-flash write $(BIN_IMAGE) 0x8000000
+		-c "reset run" -c shutdown || \
+	st-flash write $(BIN_IMAGE) 0x8000000
 
 .PHONY: clean
