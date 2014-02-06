@@ -19,6 +19,8 @@ SIZE = $(CROSS_COMPILE)size
 CPU = cortex-m4
 CFLAGS = -mcpu=$(CPU) -march=armv7e-m -mtune=cortex-m4
 CFLAGS += -mlittle-endian -mthumb
+# FPU
+CFLAGS += -mfpu=fpv4-sp-d16 -mfloat-abi=hard
 
 LDFLAGS =
 define get_library_path
@@ -39,7 +41,6 @@ CFLAGS += -fno-common
 CFLAGS += --param max-inline-insns-single=1000
 
 # FPU
-CFLAGS += -mfpu=fpv4-sp-d16 -mfloat-abi=hard
 CFLAGS += -DARM_MATH_CM4 -D__FPU_PRESENT
 
 # specify STM32F429
