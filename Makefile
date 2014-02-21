@@ -34,7 +34,7 @@ CFLAGS += -g -std=c99
 CFLAGS += -Wall
 
 # Optimizations
-CFLAGS += -g -std=c99 -O3 -ffast-math
+CFLAGS += -O3 -ffast-math
 CFLAGS += -ffunction-sections -fdata-sections
 CFLAGS += -Wl,--gc-sections
 CFLAGS += -fno-common
